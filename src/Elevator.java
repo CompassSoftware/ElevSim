@@ -16,8 +16,8 @@ public class Elevator {
         this.destinationFloor = destinationFloor;
         this.numberOfFloors = numberOfFloors;
     }
-
-    /**
+    
+     /**
      * Author: Elijah Smith
      * Issue #16 moveDown()
      */
