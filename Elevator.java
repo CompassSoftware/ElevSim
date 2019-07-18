@@ -1,7 +1,6 @@
 /**
  * 
  */ 
-
 public class Elevator {
 
     private int currentFloor;
@@ -48,10 +47,12 @@ public class Elevator {
     *
     */
     private int floorDifference(int floorA, int floorB){
-        if( floorA < floorB )
+        if( floorA < floorB ){
             return (floorB - floorA);
-        else
-            return (floorA - floorB);
+	}
+	else{
+	return (floorA - floorB);
+    	}
     }
 
     /**
