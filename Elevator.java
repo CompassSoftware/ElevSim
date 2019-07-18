@@ -44,7 +44,6 @@ public class Elevator {
     /**
     * Author Erik Burr
     * Issue #11 Current floor
-    *
     */
     private int floorDifference(int floorA, int floorB){
         if( floorA < floorB ){
