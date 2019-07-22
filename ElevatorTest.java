@@ -4,9 +4,10 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public class  ElevatorTest {
+public class ElevatorTest {
+    
     /**
-     * Author :
+     * Author: ES
      */ 
     @Test
     public void testEvaluate() {
@@ -15,7 +16,11 @@ public class  ElevatorTest {
         int newCurrent = elevator.getCurrentFloor();
         assertEquals(1, newCurrent);
     }
- 
+    
+    /**
+     * Author: Elijah Smith
+     *
+     */ 
     @Test
     public void testEvaluate2() {
         int cur = 69;
@@ -25,4 +30,16 @@ public class  ElevatorTest {
         int newCur = elevator.getCurrentFloor();
         assertEquals(69, newCur);
     }
+    
+    /*
+    * Author: Erik Burr
+    * Test method for move up
+    */
+    
+	@Test
+	public void testEvaluate3() {
+	  Elevator elev = new Elevator(1,5,5);
+		elev.moveUp();
+		int newCurrent = elev.getCurrentFloor();
+		assertEquals(1, newCurrent);	}
 }

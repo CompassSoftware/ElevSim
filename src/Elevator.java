@@ -3,7 +3,6 @@
  */ 
 
 public class Elevator {
-
     private int currentFloor;
     private int destinationFloor;
     private int numberOfFloors;
@@ -23,23 +22,25 @@ public class Elevator {
      * Issue #16 moveDown()
      */
     public void moveDown() {
-        int decrementValue = this.currentFloor - this.destinationFloor;
-        for(int i = 0; i < decrementValue; i++) {
+        int newCurrent = this.currentFloor - this.destinationFloor;
+        for(int i = 0; i < newCurrent; i++) {
             this.currentFloor--;
         }
     }
-    
-   /**
-    * Author: Erik Burr
-    * Issue #9 moveUp
-    */
-    public void moveUp(){
-        int newCurrent = this.currentFloor - this.destinationFloor;
-        for(int i = 0; i < newCurrent; i++) {
-            while(this.currentFloor != this.destinationFloor) {
-            this.currentFloor--;
-         }
-     }
+
+    /**
+     * Author: Erik Burr
+     * Issue #5 move()
+     */
+    public void move()
+    	{ System.out.println("Current floor: " + currentFloor);  
+    	if (destinationFloor > currentFloor) {
+      	moveUp(); 
+    	}
+    	else {
+      	moveDown();
+    	}
+    }
 
     /**
      * Author: Elijah Smith
@@ -47,16 +48,7 @@ public class Elevator {
      */ 
     public int getCurrentFloor() {
         return this.currentFloor;
-     }
-	    
-     /**
-      * Author: Erik Burr
-      * Issue #9 moveUp
-      */
-     public int getDestinationFloor() {
-	  return this.destinationFloor;
-      }
-
+    }
 }
 
 

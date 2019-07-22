@@ -5,8 +5,8 @@
    <property name = "test.src.dir" value = "tests"/>
    <property name = "test.build.dir" value = "${test.src.dir}/build"/>
 
-   <path id='classpath'>
-      <fileset dir="${lib.dir}" includes="**/*.jar" />
+   <path id='classpath.refid'>
+      <fileset dir="${lib.dir}" includes="ant-junit.jar" />
    </path>
    
    <target name = "init" description = "Make necessary directories.">
@@ -22,10 +22,15 @@
    <target name="test" depends = "compile" description="Compile and run tests.">
       <mkdir dir = "${test.build.dir}"/>
       
-      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" includes = "${lib.dir}/ant-junit.jar" includeantruntime = "true"/>
+      <javac srcdir = "${test.src.dir}" destdir = "${test.build.dir}" includes = "${lib.dir}/ant-junit.jar" classpathref = "classpath.refid" includeantruntime = "true"/>
       
       <junit haltonfailure="true" printsummary = "true">
-         <classpath location="${lib.dir}/ant-junit.jar"/>
+         <classpath>
+            <path refid = "classpath.refid"/>
+            <fileset dir = "${lib.dir}">
+               <include name = "**/ant-junit.jar"/>
+            </fileset>
+         </classpath>
          <batchtest>
              <fileset dir="${test.build.dir}">
                <include name="**/*Test*" />
