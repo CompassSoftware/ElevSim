@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class RandomPassenger 
 {
-    public void createPassenger() 
+    public Passenger randPass() 
     {
         Random rand = new Random();
         int s = rand.nextInt(5); 
@@ -19,6 +19,7 @@ public class RandomPassenger
             d = rand.nextInt(5);
             d += 1;
         }
-    Passenger randPass = new Passenger(s, d);
+        Passenger randPass = new Passenger(s, d);
+        return randPass;
     }
 }
