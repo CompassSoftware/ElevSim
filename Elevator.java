@@ -1,7 +1,6 @@
 /**
  * 
  */ 
-
 public class Elevator {
 
     private int currentFloor;
@@ -40,6 +39,20 @@ public class Elevator {
             this.currentFloor--;
          }
      }
+	    
+	    
+    /**
+    * Author Erik Burr
+    * Issue #11 Current floor
+    */
+    private int floorDifference(int floorA, int floorB){
+        if( floorA < floorB ){
+            return (floorB - floorA);
+	}
+	else{
+	return (floorA - floorB);
+    	}
+    }
 
     /**
      * Author: Elijah Smith
