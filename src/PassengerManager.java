@@ -4,6 +4,7 @@
 */
 
 import java.util.Random;
+import java.util.ArrayList;
 
 public class PassengerManager
 {
@@ -12,16 +13,16 @@ public class PassengerManager
     public Passenger newPassenger() 
     {
         Random rand = new Random();
-        int s = rand.nextInt(100); 
-        int s += 1;
-        int d = rand.nextInt(100);
-        int d += 1; 
-        while (d == s) 
+        int start = rand.nextInt(100); 
+        int start += 1;
+        int dest = rand.nextInt(100);
+        int dest += 1; 
+        while (dest == start) 
         {
-            d = rand.nextInt(100);
-            d += 1;
+            dest = rand.nextInt(100);
+            dest += 1;
         }
-        Passenger newPass = new Passenger(s, d);
+        Passenger newPass = new Passenger(start, dest);
         return newPass;
     }
 }
