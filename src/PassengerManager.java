@@ -10,16 +10,16 @@ public class PassengerManager
 {
     private ArrayList<Passenger> passengers;
     
-    public Passenger newPassenger() 
+    public Passenger newPassenger(int numFloors) 
     {
         Random rand = new Random();
-        int start = rand.nextInt(100); 
+        int start = rand.nextInt(numFloors); 
         int start += 1;
-        int dest = rand.nextInt(100);
+        int dest = rand.nextInt(numFloors);
         int dest += 1; 
         while (dest == start) 
         {
-            dest = rand.nextInt(100);
+            dest = rand.nextInt(numFloors);
             dest += 1;
         }
         Passenger newPass = new Passenger(start, dest);
