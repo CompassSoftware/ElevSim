@@ -14,9 +14,9 @@ public class PassengerManager
     {
         Random rand = new Random();
         int start = rand.nextInt(numFloors); 
-        int start++;
+        start++;
         int dest = rand.nextInt(numFloors);
-        int dest++; 
+        dest++; 
         while (dest == start) 
         {
             dest = rand.nextInt(numFloors);
