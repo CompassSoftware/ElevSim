@@ -25,4 +25,12 @@ public class PassengerManager
         Passenger newPass = new Passenger(start, dest);
         return newPass;
     }
+    
+    public void next()
+    {
+        for (int i = 0; i < passengers.size(); i++)
+        {
+           passengers.get(i).next(); 
+        }
+    }
 }
