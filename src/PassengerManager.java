@@ -14,13 +14,13 @@ public class PassengerManager
     {
         Random rand = new Random();
         int start = rand.nextInt(numFloors); 
-        int start ++;
+        int start++;
         int dest = rand.nextInt(numFloors);
-        int dest ++; 
+        int dest++; 
         while (dest == start) 
         {
             dest = rand.nextInt(numFloors);
-            dest ++;
+            dest++;
         }
         Passenger newPass = new Passenger(start, dest);
         return newPass;
