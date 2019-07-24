@@ -31,7 +31,8 @@ public class Elevator {
     */
     public void moveUp(){
         currentFloor++;        
-
+    }
+	
     /**
      * Author: Elijah Smith
      * Issue #22 getter method
