@@ -1,7 +1,6 @@
 /**
  * 
  */ 
-
 public class Elevator {
 
     private int currentFloor;
@@ -32,7 +31,6 @@ public class Elevator {
     */
     public void moveUp(){
         currentFloor++;        
-    }
 
     /**
      * Author: Elijah Smith
