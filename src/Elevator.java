@@ -87,6 +87,21 @@ public class Elevator {
         return this.numberOfFloors;
       }
 
+      /**
+       * Author: Elijah Smith
+       * Issue #67 pushedUp accessor
+       */ 
+      public boolean[] getPushedUpArray() {
+        return this.pushedUp;
+      }
+
+      /**
+       * Author: Elijah Smith
+       * Issue #67 pushedDown accessor
+       */ 
+      public boolean[] getPushedDownArray() {
+        return this.pushedDown;
+      }
       public void stop() {
         this.stopped = true;
       }
