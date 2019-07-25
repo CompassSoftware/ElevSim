@@ -14,7 +14,7 @@ public class PassengerManager
     public PassengerManager(Elevator elevator)
     {
        this.elevator = elevator;
-       this.passenger = new ArrayList<Passenger>();
+       this.passengers = new ArrayList<Passenger>();
     }
     
     public Passenger newPassenger(int numFloors) 
