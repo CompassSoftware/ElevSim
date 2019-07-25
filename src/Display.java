@@ -45,7 +45,7 @@ Passenger passenger;
      */
     public void display_currentE () {
        
-        System.out.println("Elevator leaves from floor " + elevator.getCurrentFloor());
+        System.out.println("Elevator doors close\nElevator leaves from floor " + elevator.getCurrentFloor());
     }
 
     /*
@@ -53,6 +53,6 @@ Passenger passenger;
      */
     public void display_destE () {
     
-        System.out.println("Elevator arrives at floor " + elevator.getDestinationFloor());
+        System.out.println("Elevator doors open\nElevator arrives at floor " + elevator.getDestinationFloor());
     }
 }

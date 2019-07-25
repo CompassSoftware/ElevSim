@@ -9,10 +9,10 @@ public class Tests
     */
    @Test
    public void testMoveDown() {
-        Elevator elevator = new Elevator(5, 1, 5);
+        Elevator elevator = new Elevator(5, 4, 5);
         elevator.moveDown();
         int newCurrent = elevator.getCurrentFloor();
-        assertEquals(1, newCurrent);      
+        assertEquals(4, newCurrent);      
    }
    
    /**
@@ -21,22 +21,36 @@ public class Tests
     */
    @Test
    public void testMoveUp() {
-        Elevator elev = new Elevator(1, 5, 5);
+        Elevator elev = new Elevator(1, 2, 5);
         elev.moveUp();
         int newCurrent = elev.getCurrentFloor();
-        assertEquals(1, newCurrent);
+        assertEquals(2, newCurrent);
    }
+   
+      /**
+    * Author: Erik Burr
+    *
+    */
+   @Test
+   public void testPushUp() {
+        Elevator elev = new Elevator(1, 5, 5);   
+        int newCurrent = elev.getCurrentFloor();
+        elev.pushUp(newCurrent);
+        assertEquals(1, newCurrent);   
+   }
+
    /**
     * Author: Erik Burr
     *
     */
-   @Test 
-   public void testFloorDifference() {
-        Elevator elev = new Elevator(1, 5, 5);
-        elev.floorDifference (3, 5);
+   @Test
+   public void testPushDown() {
+        Elevator elev = new Elevator(1, 5, 5);   
         int newCurrent = elev.getCurrentFloor();
-        assertEquals(2, newCurrent);
-   }
+        elev.pushDown(newCurrent);
+        assertEquals(1, newCurrent);  
+   }  
+
    
    /**
     * Author: Elijah Smith
@@ -48,6 +62,47 @@ public class Tests
         int destinationFloor = 420;
         int totalFloors = 600;
         Elevator elevator = new Elevator(currentFloor, destinationFloor, totalFloors);
+   }
+
+    /**
+    * Author: Elijah Smith
+    */ 
+    @Test
+    public void testElevatorConstructor1() {
+        Elevator elev = new Elevator(100);
+
+        assertEquals(1, elev.getCurrentFloor());
+        assertEquals(100, elev.getNumberOfFloors());
+    }
+
+    /**
+     * Author: Elijah Smith
+     */ 
+    @Test
+    public void testElevatorConstructor2() {
+        Elevator elev = new Elevator(2, 99, 100);
+
+        assertEquals(2, elev.getCurrentFloor());
+        assertEquals(99, elev.getDestinationFloor());
+        assertEquals(100, elev.getNumberOfFloors());
+    }
+
+   @Test
+   public void testPushTrue1()
+   {
+      Elevator elev = new Elevator(1, 5, 10);
+
+      assertEquals(false, elev.pushTrue());
+   }
+
+   @Test 
+   public void testPushTrue2()
+   {
+      Elevator elev = new Elevator(1, 5, 10);
+      elev.pushUp(4);
+
+      assertEquals(true, elev.pushTrue());
+
    }
 
    @Test
