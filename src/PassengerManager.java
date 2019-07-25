@@ -8,21 +8,29 @@ import java.util.ArrayList;
 
 public class PassengerManager
 {
+    private Elevator elevator;    
     private ArrayList<Passenger> passengers;
+    
+    public PassengerManager(Elevator elevator)
+    {
+       this.elevator = elevator;
+       this.passengers = new ArrayList<Passenger>();
+    }
     
     public Passenger newPassenger(int numFloors) 
     {
         Random rand = new Random();
-        int start = rand.nextInt(numFloors); 
-        start++;
-        int dest = rand.nextInt(numFloors);
-        dest++; 
+        int start = rand.nextInt(numFloors) + 1;
+        int dest = rand.nextInt(numFloors) + 1;
+        
         while (dest == start) 
         {
-            dest = rand.nextInt(numFloors);
-            dest++;
+            dest = rand.nextInt(numFloors) + 1;
         }
+
         Passenger newPass = new Passenger(start, dest);
+        passengers.add(newPass);
+        
         return newPass;
     }
     
@@ -30,7 +38,7 @@ public class PassengerManager
     {
         for (int i = 0; i < passengers.size(); i++)
         {
-           passengers.get(i).next(); 
+           passengers.get(i).next();
         }
     }
 }
