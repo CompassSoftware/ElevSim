@@ -9,6 +9,7 @@ public class Elevator {
     private boolean[] pushedUp;
     private boolean[] pushedDown;
     private boolean stopped;
+    private Timer timerDelay;
 
     /**
      * Author: Elijah Smith
@@ -20,6 +21,8 @@ public class Elevator {
         this.destinationFloor = new ArrayList<>();
         pushedUp = new boolean[numberOfFloors+1];
         pushedDown = new boolean[numberOfFloors+1];
+        //elevator time delay
+        timerDelay = new Timer(3000);
     }
     /**
      * Author: Elijah Smith
@@ -31,6 +34,8 @@ public class Elevator {
         this.numberOfFloors = numberOfFloors;
         pushedUp = new boolean[numberOfFloors];
         pushedDown = new boolean[numberOfFloors];
+        //elevator time delay
+        timerDelay = new Timer(3000);
     }
 
     /**
@@ -41,16 +46,10 @@ public class Elevator {
     public void moveDown() {
         currentFloor--;
         stopped = false;
-        try {
-            Thread.sleep(3000);
-            System.out.println("Elevator going down...");
-        } 
-        
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //idk if this works
+        t.run();
+        t.expired();
     }
-    
    /**
     * Author: Elijah Smith
     * Issue #57/51 moveUp
@@ -58,14 +57,9 @@ public class Elevator {
     public void moveUp() {
         currentFloor++;
         stopped = false;
-        try {
-            Thread.sleep(3000);
-            System.out.println("Elevator going up...");
-        } 
-        
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //idk if this works
+        t.run();
+        t.expired();    
     }
     
     /**
