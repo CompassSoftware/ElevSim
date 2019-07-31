@@ -39,13 +39,15 @@ public class Passenger
        {
            if(this.destinationFloor > this.startFloor)
            {
-               System.out.println("Passenger on floor " + startFloor + " pushed Up.");
-               elev.pushUp(this.startFloor);
+               //This will change when Passenger starts using Controller not Elevator
+               //elev.pushUp(this.startFloor);
+                System.out.println("Passenger on floor " + startFloor + " pushed Up.");
            }
            else
-           {
+           {    
+                //This will change when Passenger starts using Controller not Elevator
+               //elev.pushDown(this.startFloor);
                System.out.println("Passenger on floor " + startFloor + " pushed Down.");
-               elev.pushDown(this.startFloor);
            }
            this.waiting = true;
        }
