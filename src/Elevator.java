@@ -69,14 +69,15 @@ public class Elevator {
         pushedDown[currentFloor] = true;  
     }
 
-    public boolean pushTrue()
+    public int pushTrue()
     {
+        int counter = 0;
         for(int loop = 0; loop < pushedUp.length; loop++)
         {
             if(pushedUp[loop] || pushedDown[loop])
-               return true;
+               counter++;
         }
-        return false;
+        return counter;
     }
 
     public int hasDestFloors()
