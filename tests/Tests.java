@@ -244,6 +244,15 @@ public class Tests implements TimerClient
    }
 
 
+   @Test
+   public void testpushTrue()
+   {
+      Elevator[] elevators = new Elevator[2];
+      DefaultController control = new DefaultController(elevators);
+      assertEquals(0, control.pushTrue());   
+   }
+
+
 /* needs to change  
    @Test
    public void testDefaultController1()
