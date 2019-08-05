@@ -18,9 +18,9 @@ public class ElevSim
         
         while(true)
         {
-            disp.display();
             passengerManager.next();
             control.next(); 
+            disp.display();
         }
    }
 }
