@@ -157,63 +157,7 @@ public class Tests implements TimerClient
         assertEquals(true, pushedDown2);
         assertEquals(true, pushedDown3);
     }
-
-   
-    /**
-     * Author: Elijah Smith
-     * test brought from TimerTest.java
-     */ 
-    /*
-    @Test
-    public void runInterruptTest() {
-            numPolls = 0;
-            System.out.println("Testing using interrupt method:");
-            System.out.println("\tTest will sleep for " 
-                        + pollDelay + "ms and then awake and print a dot.");
-            System.out.println("\tWhen timer expires it will interrupt causing sleeping to stop.");
-
-            System.out.println("\tCreating " + numSeconds + " second timer...");        
-            Timer t = new Timer((int)(numSeconds*1000), this); // pass object with callback method
-
-            System.out.println("\tStarting timer...");
-            System.out.print("\t");
-            t.start();
-
-            while(! timerExpired)
-            {
-                try
-                {
-                   Thread.sleep((int)pollDelay);
-                    
-                }
-                catch(Exception e)
-                {
-                }
-
-                numPolls++;
-                System.out.print(".");
-            }
-            System.out.println();
-            System.out.println("\tNumber of sleeps was " + numPolls);   
-            System.out.println("\tNumber of expected sleeps was " + numExpectedPolls);  
-       
-            if (numExpectedPolls == numPolls) {
-                System.out.println("Interrupt Test PASSED!");
-                assertEquals(numExpectedPolls, numPolls);
-            }
-            else if (numExpectedPolls-1 <= numPolls && numPolls <= numExpectedPolls+1) {
-                System.out.println("Interrupt Test PASSED! (small timing variance between threads is allowed)"); 
-                state = true;
-                assertTrue(state);
-            }
-            else { 
-                state = false;
-                System.out.println("Interrupt Test FAILED!");
-                assertTrue(state);   
-            }
-    }
-    */
-     
+    
    /**
     * Author: Elijah Smith
     * 
@@ -299,19 +243,5 @@ public class Tests implements TimerClient
      
       assertEquals(3, count);   
    }
-
-/* needs to change  
-   @Test
-   public void testDefaultController1()
-   {
-      Elevator[] elevators = new Elevator[2];
-      elevators[0] = new Elevator(1, 10);
-      DefaultController control = new DefaultController(elevators[0]);
-
-      elev.pushUp(5);
-      control.next();
-
-      assertEquals(2, elev.getCurrentFloor());
-   }
-*/   
+  
 }
