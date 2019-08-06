@@ -21,7 +21,7 @@ public class Display
       for(int loop = 0; loop < passengers.size(); loop++)
       {
          Passenger passenger = passengers.get(loop);
-         printPassenger(loop, passenger);
+         printPassenger(loop + 1, passenger);
       }
       
       System.out.println("=============================================================");
@@ -29,7 +29,7 @@ public class Display
       Elevator[] elevators = control.getElevators();
       for(int loop = 0; loop < elevators.length; loop++)
       {
-         printElevator(loop, elevators[loop]);
+         printElevator(loop + 1, elevators[loop]);
          System.out.println("=============================================================");
       }
 
@@ -45,7 +45,7 @@ public class Display
    {
          if(passenger.getWaiting())
          {
-            System.out.print("Passenger " + number + " is on Floor " + passenger.getStartFloor());
+            System.out.print("\t Passenger " + number + " is on Floor " + passenger.getStartFloor());
             
             if(passenger.getStartFloor() > passenger.getDestinationFloor())
             {
@@ -62,8 +62,8 @@ public class Display
    {
       if(elevator.getStopped())
       {
-         System.out.println("Elevator " + number + " has stopped on Floor " + elevator.getCurrentFloor());
-         System.out.println("Elevator doors have opened.");
+         System.out.println("\t Elevator " + number + " has stopped on Floor " + elevator.getCurrentFloor());
+         System.out.println("\t Elevator doors have opened.");
 
          ArrayList<Passenger> passengers = passengerManager.getPassengers();
          for(int loop = 0; loop < passengers.size(); loop++)
@@ -72,19 +72,19 @@ public class Display
 
             if(elevator.getCurrentFloor() == passenger.getStartFloor() && passenger.getRiding())
             {
-               System.out.println("Passenger " + loop + " has boarded the elevator.");
+               System.out.println("\t Passenger " + (loop + 1) + " has boarded the elevator.");
             }
             else if(elevator.getCurrentFloor() == passenger.getDestinationFloor() && passenger.getDone())
             {
-               System.out.println("Passenger " + loop + " has left the elevator.");
+               System.out.println("\t Passenger " + (loop + 1) + " has left the elevator.");
             }
 
          }
-         System.out.println("Elevator doors have closed.");
+         System.out.println("\t Elevator doors have closed.");
       }
       else
       {
-         System.out.println("Elevator " + number + " is on Floor " + elevator.getCurrentFloor());
+         System.out.println("\t Elevator " + number + " is on Floor " + elevator.getCurrentFloor());
       }
    }
 }
