@@ -13,7 +13,7 @@ public class Elevator {
         this.currentFloor = 1;
         this.numberOfFloors = numberOfFloors;
         this.destinationFloor = new boolean[numberOfFloors+1];
-        this.stopped = true;
+        this.stopped = false;
     }
 
     /**
@@ -24,7 +24,7 @@ public class Elevator {
         this.currentFloor = currentFloor;
         this.numberOfFloors = numberOfFloors;
         this.destinationFloor = new boolean[numberOfFloors+1];
-        this.stopped = true;
+        this.stopped = false;
     }
 
     /**

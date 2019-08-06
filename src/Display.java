@@ -49,11 +49,11 @@ public class Display
             
             if(passenger.getStartFloor() > passenger.getDestinationFloor())
             {
-               System.out.println(" waiting to go down.");
+               System.out.println(" waiting to go down to " + passenger.getDestinationFloor() + ".");
             }
             else
             {
-               System.out.println(" waiting to go up.");
+               System.out.println(" waiting to go up to " + passenger.getDestinationFloor() + ".");
             }
          }
    }
@@ -70,11 +70,15 @@ public class Display
          {
             Passenger passenger = passengers.get(loop);
 
-            if(elevator.getCurrentFloor() == passenger.getStartFloor() && passenger.getRiding())
+            if(elevator.getCurrentFloor() == passenger.getStartFloor())
             {
                System.out.println("\t Passenger " + (loop + 1) + " has boarded the elevator.");
             }
-            else if(elevator.getCurrentFloor() == passenger.getDestinationFloor() && passenger.getDone())
+            else if(passenger.getRidingElev() == number)
+            {
+               System.out.println("Passenger " + loop + " has left the elevator.");
+            }
+            else if(passenger.getRiding() && passenger.getRidingElev() == number)
             {
                System.out.println("\t Passenger " + (loop + 1) + " has left the elevator.");
             }

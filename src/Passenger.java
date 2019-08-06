@@ -4,7 +4,8 @@ public class Passenger
 
    private int startFloor;
    private int destinationFloor;
-   
+   private int ridingElev;
+
    private boolean waiting;
    private boolean riding;
    private boolean done;
@@ -15,7 +16,8 @@ public class Passenger
 
       this.startFloor = startFloor;
       this.destinationFloor = destinationFloor;
-      
+      this.ridingElev = -1;
+
       this.waiting = false;
       this.riding = false;
       this.done = false;
@@ -27,7 +29,8 @@ public class Passenger
       
       this.startFloor = 1;
       this.destinationFloor = destinationFloor;
-      
+      this.ridingElev = -1;
+
       this.waiting = false;
       this.riding = false;
       this.done = false;
@@ -53,13 +56,15 @@ public class Passenger
            for(int loop = 0; loop < elevators.length; loop++)
            {
                Elevator elev = elevators[loop];
-               if(waiting && !riding && elev.getStopped() && elev.getCurrentFloor() == startFloor)
+               if(!riding && elev.getStopped() && elev.getCurrentFloor() == startFloor)
                {
                   elev.addDestinationFloor(destinationFloor);
                   this.riding = true;
+                  this.ridingElev = loop;
+
                   break;
                }
-               else if(elev.getStopped() && elev.getCurrentFloor() == destinationFloor)
+               else if(loop == ridingElev && elev.getStopped() && elev.getCurrentFloor() == destinationFloor)
                {
                   this.done = true;
                   break;
@@ -76,6 +81,11 @@ public class Passenger
    public boolean getRiding()
    {
       return this.riding;
+   }
+
+   public int getRidingElev()
+   {
+      return this.ridingElev;
    }
 
    public boolean getDone()

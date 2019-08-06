@@ -16,7 +16,7 @@ public class DefaultController extends Controller
    {
       super(numberOfFloors, numberOfElevators);
       
-      super.elevators[1] = new Elevator(super.numberOfFloors, super.numberOfFloors);
+      super.elevators[1] = new Elevator(super.numberOfFloors - 1, super.numberOfFloors);
       
       leftMovingUp = false;
       leftMovingDown = false;
@@ -103,6 +103,15 @@ public class DefaultController extends Controller
       if((leftMovingUp && pushedUp[leftCurrentFloor]) || (leftMovingDown && pushedDown[leftCurrentFloor]) || leftDestFloors[leftCurrentFloor])
       {
          leftElev.stop();
+         
+         if(leftMovingUp)
+         {
+            pushedUp[leftCurrentFloor] = false;
+         }
+         else if(leftMovingDown)
+         {
+            pushedDown[leftCurrentFloor] = false;
+         }
       }
       else if(leftMovingUp)
       {
@@ -116,6 +125,15 @@ public class DefaultController extends Controller
       if((rightMovingUp && pushedUp[rightCurrentFloor]) || (rightMovingDown && pushedDown[rightCurrentFloor]) || rightDestFloors[rightCurrentFloor])
       {
          rightElev.stop();
+
+         if(rightMovingUp)
+         {
+            pushedUp[rightCurrentFloor] = false;
+         }
+         else if(rightMovingDown)
+         {
+            pushedDown[rightCurrentFloor] = false;
+         }
       }
       else if(rightMovingUp)
       {
@@ -125,7 +143,9 @@ public class DefaultController extends Controller
       {
          rightElev.moveDown();
       }
+
       time.run();
+
    }
   
 }

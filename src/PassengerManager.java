@@ -28,6 +28,14 @@ public class PassengerManager
         
         return newPass;
     }
+
+    public Passenger newPassenger(int startFloor, int destFloor)
+    {
+        Passenger newPass = new Passenger(control, startFloor, destFloor);
+        passengers.add(newPass);
+
+        return newPass;
+    }
     
     public void next()
     {
